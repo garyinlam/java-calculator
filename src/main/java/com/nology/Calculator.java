@@ -1,31 +1,38 @@
 package com.nology;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+
 public class Calculator {
-    public double add(double num1, double num2) {
-        return 0;
+    public String add(String num1, String num2) {
+        return new BigDecimal(num1).add(new BigDecimal(num2)).toString();
     }
 
-    public double subtract(double num1, double num2) {
-        return 0;
+    public String subtract(String num1, String num2) {
+        return new BigDecimal(num1).subtract(new BigDecimal(num2)).toString();
     }
 
-    public double multiply(double num1, double num2) {
-        return 0;
+    public String multiply(String num1, String num2) {
+        return new BigDecimal(num1).multiply(new BigDecimal(num2)).toString();
     }
 
-    public double divide(double num1, double num2) {
-        return 0;
+    public String divide(String num1, String num2) {
+        return new BigDecimal(num1).divide(new BigDecimal(num2)).toString();
     }
 
-    public double square(double num) {
-        return 0;
+    public String square(String num) {
+        return new BigDecimal(num).pow(2).toString();
+
     }
 
-    public double sqrt(double num) {
-        return 0;
+    public String sqrt(String num) {
+        if (new BigDecimal(num).compareTo(new BigDecimal(0)) < 0){
+            throw new IllegalArgumentException();
+        }
+        return new BigDecimal(num).sqrt(new MathContext(10)).toString();
     }
 
-    public double evaluate(String s) {
-        return 0;
+    public String evaluate(String s) {
+        return "";
     }
 }
