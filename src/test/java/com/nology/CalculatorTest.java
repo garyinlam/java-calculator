@@ -70,8 +70,6 @@ class CalculatorTest {
         assertEquals("1",calculator.evaluate("(4/2)-1"));
         assertEquals("8",calculator.evaluate("2sq2"));
         assertEquals("0",calculator.evaluate("2-rt4"));
-
-
     }
 
     @Test
